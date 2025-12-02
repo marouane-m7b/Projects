@@ -14,5 +14,3 @@ elif op == "/":
 
 
 print(f"{num1} {op} {num2} = {result}")
-
-
