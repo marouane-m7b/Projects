@@ -14,9 +14,11 @@ mois = (
 )
 
 nombre = int(input("donner un nombre :"))
+jour_year = nombre
 
 while nombre < 0 or nombre > 365:
     nombre = int(input("donner un nombre valide :"))
+    jour_year = nombre
 
 total = 0
 monthIndex = 0
@@ -29,9 +31,21 @@ for i in mois:
         break
 
 
-result = f"le jour {nombre} correspont  au {nombre - total} {month[0]}"
+result = f"le jour {nombre} correspont au {nombre - total} {month[0]}"
 
 print(result)
 
+# ================== Prof Solutiion ===================
+
+jour_input = jour_year
+
+i = 0
+
+while jour_year > mois[i][1]:
+    jour_year -= mois[i][1]
+    i += 1
 
 
+result = f"le jour {jour_input} correspont au {jour_year} {mois[i][0]}"
+
+print(result)
