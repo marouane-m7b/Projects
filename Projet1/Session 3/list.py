@@ -25,25 +25,38 @@ list_prenom2 = list_prenom.copy()
 # affiche la liste finale
 print(list_prenom)
 
+# Parcours classique de la liste via les index
 for i in range(len(list_prenom)):
     print(list_prenom[i])
 
+# Parcours direct des éléments (méthode plus "Pythonique")
 for x in list_prenom:
     print(x)
 
+# Parcours avec 'enumerate' pour obtenir l'index (x) et la valeur (y) simultanément
 for x,y in enumerate(list_prenom):
     print(x, y)
 
+# Création d'une nouvelle liste d'entiers
 liste = [12,13,14,15,10,20,30]
+
+# Slicing : affiche de l'index 1 inclus à 5 exclu, avec un pas de 1
 print(liste[1:5:1])
+# Slicing : affiche du début de la liste jusqu'à l'index 5 exclu
 print(liste[:5])
+# Slicing : parcourt toute la liste avec un saut de 5
 print(liste[::5])
+# Slicing : crée une copie inversée de la liste (pas de -1)
 print(liste[::-1])
 
+# Trie la liste en place par ordre croissant
 liste.sort()
-print(liste)
-liste.sort(reverse=True)
-print(liste)
+print(liste) # Affiche la liste triée
 
+# Trie la liste en place par ordre décroissant
+liste.sort(reverse=True)
+print(liste) # Affiche la liste triée à l'envers
+
+# Inverse simplement l'ordre actuel des éléments (sans trier par valeur)
 liste.reverse()
 print(liste)
