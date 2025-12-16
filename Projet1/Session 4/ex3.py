@@ -37,8 +37,8 @@ def projet_plus_cher(projets):
     return cher
 
 
-# print(projets_en_cours(projets))
+print(projets_en_cours(projets))
 
-# print(budget_moyen(projets))
+print(budget_moyen(projets))
 
 print(projet_plus_cher(projets))
