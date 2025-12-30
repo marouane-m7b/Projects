@@ -1,0 +1,98 @@
+Tp3 : Classe, héritage et redéfinition
+
+Exercice 1 – Gestion d’un catalogue de produits
+Cet exercice vise à mettre en pratique les notions de classes, encapsulation, validation des
+données et manipulation de listes d’objets.
+
+1. Créer une classe Produit avec les attributs privés suivants :
+- nom : nom du produit (chaîne de caractères)
+- prix : prix du produit (nombre réel)
+- quantite : quantité disponible en stock (entier)
+
+2. Définir un constructeur avec paramètres pour initialiser tous les attributs.
+
+3. Implémenter les getters et setters pour chaque attribut, en garantissant que :
+- le prix est strictement positif,
+- la quantité est un entier positif ou nul.
+
+4. Ajouter une méthode afficher_infos() qui affiche les informations complètes du produit.
+
+5. Créer une classe CatalogueProduits contenant une liste de produits et permettant :
+- d’ajouter un produit,
+- d’afficher tous les produits,
+- de calculer et retourner la valeur totale du stock.
+Objectifs
+
+Ce travail pratique a pour objectif de mettre en œuvre les
+notions fondamentales de la programmation orientée objet en
+Python :
+• classes, objets,
+• encapsulation,
+• héritage,
+• méthodes statiques,
+• polymorphisme.
+
+H.BENSAG 2
+6. Écrire un programme principal pour tester toutes les fonctionnalités.
+
+Exercice 2 – Gestion d’une bibliothèque :
+On souhaite développer une application Python pour gérer des personnes, des adhérents, des
+auteurs et des livres dans une bibliothèque.
+1. Créer une classe Personne avec les attributs privés : nom, prenom, email, tel et age.
+- Ajouter un constructeur avec paramètres.
+- Définir la méthode __str__().
+
+2. Créer une classe Adherent héritant de Personne, avec un attribut num_adherent, et
+redéfinir la méthode __str__().
+
+3. Créer une classe Auteur héritant de Personne, avec un attribut num_auteur, et redéfinir la
+méthode __str__().
+
+4. Créer une classe Livre avec les attributs : isbn, titre et auteur (objet Auteur).
+- Définir la méthode __str__().
+
+5. Écrire un programme principal qui :
+- crée un adhérent,
+- crée un auteur,
+- crée un livre écrit par cet auteur,
+- affiche les informations de l’adhérent et du livre.
+
+Exercice 3 – Hiérarchie de véhicules
+On souhaite modéliser différents types de véhicules afin d’illustrer l’héritage et le
+polymorphisme.
+
+1. Créer une classe de base Vehicule avec :
+- nom : nom du véhicule
+- prix : prix du véhicule
+- emettre_son() : affiche un son générique
+- afficher_informations() : affiche le nom et le prix
+
+H.BENSAG 3
+2. Créer les sous-classes suivantes :
+- Voiture : attributs modele et annee, redéfinit emettre_son()
+- Moto : attributs marque et puissance, redéfinit emettre_son()
+- Avion : attributs compagnie et vitesse_max, redéfinit emettre_son()
+
+3. Écrire un programme principal qui :
+- crée des objets Voiture, Moto et Avion,
+- appelle emettre_son() pour chaque véhicule,
+- affiche toutes les informations.
+
+Exercice 4 – Gestion des paiements (Polymorphisme)
+On souhaite développer une application permettant de gérer différents moyens de paiement.
+
+1. Créer une classe de base Paiement avec la méthode effectuer_paiement(montant).
+
+2. Créer les classes dérivées CarteCredit et PayPal héritant de Paiement :
+- CarteCredit possède un attribut numero_carte
+- PayPal possède un attribut email
+- Chaque classe redéfinit effectuer_paiement(montant)
+
+3. Créer une classe Commande avec :
+- montant_commande
+- moyen_paiement (objet de type Paiement)
+- une méthode process_payment() utilisant le polymorphisme
+
+4. Dans un programme principal :
+- créer des commandes avec différents moyens de paiement
+- appeler process_payment() et observer le comportement polymorphe.
