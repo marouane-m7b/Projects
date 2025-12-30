@@ -1,4 +1,4 @@
-from CompteBancaire import CompteBancaire
+from classes.CompteBancaire import CompteBancaire
 
 
 class GestionComptes:
