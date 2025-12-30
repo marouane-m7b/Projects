@@ -1,4 +1,4 @@
-class Documant:
+class Document:
     def __init__(self,titre:str,auteur:str,nbrPage:int=1)->None:
         self.__titre = titre
         self.auteur = auteur

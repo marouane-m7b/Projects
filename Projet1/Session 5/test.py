@@ -1,6 +1,6 @@
-from doc import Documant
+from doc import Document
 
-doc = Documant('One Piece','Eichiro Oda',49039)
+doc = Document('One Piece','Eichiro Oda',49039)
 
 print(doc)
 
