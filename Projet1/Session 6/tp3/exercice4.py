@@ -1,3 +1,22 @@
+# Exercice 4 – Gestion des paiements (Polymorphisme)
+# On souhaite développer une application permettant de gérer différents moyens de paiement.
+#
+# 1. Créer une classe de base Paiement avec la méthode effectuer_paiement(montant).
+#
+# 2. Créer les classes dérivées CarteCredit et PayPal héritant de Paiement :
+#    - CarteCredit possède un attribut numero_carte
+#    - PayPal possède un attribut email
+#    - Chaque classe redéfinit effectuer_paiement(montant)
+#
+# 3. Créer une classe Commande avec :
+#    - montant_commande
+#    - moyen_paiement (objet de type Paiement)
+#    - une méthode process_payment() utilisant le polymorphisme
+#
+# 4. Dans un programme principal :
+#    - créer des commandes avec différents moyens de paiement
+#    - appeler process_payment() et observer le comportement polymorphe.
+
 from abc import ABC, abstractmethod
 
 # 1. Classe de base Paiement
@@ -40,15 +59,14 @@ class Commande:
         self.moyen_paiement.effectuer_paiement(self.montant_commande)
 
 # 4. Programme principal
-if __name__ == "__main__":
-    # Création des moyens de paiement
-    paiement_cc = CarteCredit(numero_carte="1234567890123456", nom_titulaire="Jean Dupont")
-    paiement_paypal = PayPal(email="jean.dupont@example.com")
+# Création des moyens de paiement
+paiement_cc = CarteCredit(numero_carte="1234567890123456", nom_titulaire="Jean Dupont")
+paiement_paypal = PayPal(email="jean.dupont@example.com")
 
-    # Création des commandes avec différents moyens de paiement
-    commande1 = Commande(montant_commande=150.75, moyen_paiement=paiement_cc)
-    commande2 = Commande(montant_commande=89.99, moyen_paiement=paiement_paypal)
+# Création des commandes avec différents moyens de paiement
+commande1 = Commande(montant_commande=150.75, moyen_paiement=paiement_cc)
+commande2 = Commande(montant_commande=89.99, moyen_paiement=paiement_paypal)
 
-    # Appeler process_payment() et observer le comportement polymorphe
-    commande1.process_payment()
-    commande2.process_payment()
+# Appeler process_payment() et observer le comportement polymorphe
+commande1.process_payment()
+commande2.process_payment()

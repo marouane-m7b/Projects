@@ -1,3 +1,21 @@
+# Exercice 3 – Hiérarchie de véhicules
+# On souhaite modéliser différents types de véhicules afin d’illustrer l’héritage et le
+# polymorphisme.
+#
+# 1. Créer une classe de base Vehicule avec :
+#    - nom : nom du véhicule
+#    - prix : prix du véhicule
+#    - emettre_son() : affiche un son générique
+#    - afficher_informations() : affiche le nom et le prix
+# 2. Créer les sous-classes suivantes :
+#    - Voiture : attributs modele et annee, redéfinit emettre_son()
+#    - Moto : attributs marque et puissance, redéfinit emettre_son()
+#    - Avion : attributs compagnie et vitesse_max, redéfinit emettre_son()
+# 3. Écrire un programme principal qui :
+#    - crée des objets Voiture, Moto et Avion,
+#    - appelle emettre_son() pour chaque véhicule,
+#    - affiche toutes les informations.
+
 class Vehicule:
     def __init__(self, nom, prix):
         self._nom = nom
@@ -60,16 +78,15 @@ class Avion(Vehicule):
 
 
 # Programme principal
-if __name__ == "__main__":
-    # Création des objets
-    ma_voiture = Voiture("Voiture de sport", 50000.00, "Porsche 911", 2023)
-    ma_moto = Moto("Moto de course", 15000.00, "Ducati", 200)
-    mon_avion = Avion("Avion de ligne", 100000000.00, "Air France", 950)
+# Création des objets
+ma_voiture = Voiture("Voiture de sport", 50000.00, "Porsche 911", 2023)
+ma_moto = Moto("Moto de course", 15000.00, "Ducati", 200)
+mon_avion = Avion("Avion de ligne", 100000000.00, "Air France", 950)
 
-    vehicules = [ma_voiture, ma_moto, mon_avion]
+vehicules = [ma_voiture, ma_moto, mon_avion]
 
-    # Appel des méthodes pour chaque véhicule
-    for vehicule in vehicules:
-        vehicule.afficher_informations()
-        vehicule.emettre_son()
-        print("-" * 30)
+# Appel des méthodes pour chaque véhicule
+for vehicule in vehicules:
+    vehicule.afficher_informations()
+    vehicule.emettre_son()
+    print("-" * 30)

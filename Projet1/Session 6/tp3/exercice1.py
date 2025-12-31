@@ -1,3 +1,26 @@
+# Exercice 1 – Gestion d’un catalogue de produits
+# Cet exercice vise à mettre en pratique les notions de classes, encapsulation, validation des
+# données et manipulation de listes d’objets.
+#
+# 1. Créer une classe Produit avec les attributs privés suivants :
+#    - nom : nom du produit (chaîne de caractères)
+#    - prix : prix du produit (nombre réel)
+#    - quantite : quantité disponible en stock (entier)
+#
+# 2. Définir un constructeur avec paramètres pour initialiser tous les attributs.
+#
+# 3. Implémenter les getters et setters pour chaque attribut, en garantissant que :
+#    - le prix est strictement positif,
+#    - la quantité est un entier positif ou nul.
+#
+# 4. Ajouter une méthode afficher_infos() qui affiche les informations complètes du produit.
+#
+# 5. Créer une classe CatalogueProduits contenant une liste de produits et permettant :
+#    - d’ajouter un produit,
+#    - d’afficher tous les produits,
+#    - de calculer et retourner la valeur totale du stock.
+# 6. Écrire un programme principal pour tester toutes les fonctionnalités.
+
 class Produit:
     def __init__(self, nom, prix, quantite):
         self._nom = nom
@@ -66,39 +89,38 @@ class CatalogueProduits:
 
 
 # Programme principal pour tester
-if __name__ == "__main__":
-    # Création de produits
-    try:
-        produit1 = Produit("Ordinateur Portable", 1200.50, 10)
-        produit2 = Produit("Smartphone", 800.00, 25)
-        produit3 = Produit("Clavier", 75.99, 50)
-    except ValueError as e:
-        print(f"Erreur lors de la création d'un produit : {e}")
-        exit()
+# Création de produits
+try:
+    produit1 = Produit("Ordinateur Portable", 1200.50, 10)
+    produit2 = Produit("Smartphone", 800.00, 25)
+    produit3 = Produit("Clavier", 75.99, 50)
+except ValueError as e:
+    print(f"Erreur lors de la création d'un produit : {e}")
+    exit()
 
-    # Création du catalogue
-    catalogue = CatalogueProduits()
+# Création du catalogue
+catalogue = CatalogueProduits()
 
-    # Ajout des produits au catalogue
-    catalogue.ajouter_produit(produit1)
-    catalogue.ajouter_produit(produit2)
-    catalogue.ajouter_produit(produit3)
-    print("\n")
+# Ajout des produits au catalogue
+catalogue.ajouter_produit(produit1)
+catalogue.ajouter_produit(produit2)
+catalogue.ajouter_produit(produit3)
+print("\n")
 
-    # Affichage de tous les produits du catalogue
-    catalogue.afficher_produits()
+# Affichage de tous les produits du catalogue
+catalogue.afficher_produits()
 
-    # Calcul et affichage de la valeur totale du stock
-    valeur_stock = catalogue.valeur_totale_stock()
-    print(f"La valeur totale du stock est de : {valeur_stock:.2f} €")
+# Calcul et affichage de la valeur totale du stock
+valeur_stock = catalogue.valeur_totale_stock()
+print(f"La valeur totale du stock est de : {valeur_stock:.2f} €")
 
-    # Test des setters avec des valeurs invalides
-    print("\n--- Test des setters avec des valeurs invalides ---")
-    produit1.set_prix(-50)
-    produit2.set_quantite(-5)
-    produit2.set_quantite(15.5)
-    print("-------------------------------------------------")
+# Test des setters avec des valeurs invalides
+print("\n--- Test des setters avec des valeurs invalides ---")
+produit1.set_prix(-50)
+produit2.set_quantite(-5)
+produit2.set_quantite(15.5)
+print("-------------------------------------------------")
 
-    # Affichage des informations après tentative de modification
-    print("\nInformations du produit 1 après tentative de modification invalide du prix:")
-    produit1.afficher_infos()
+# Affichage des informations après tentative de modification
+print("\nInformations du produit 1 après tentative de modification invalide du prix:")
+produit1.afficher_infos()
